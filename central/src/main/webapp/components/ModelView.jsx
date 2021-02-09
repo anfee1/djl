@@ -188,13 +188,15 @@ export default function ModelView(props) {
 					<TabPanel value={index} index={0} >
 						<>
 							{Object.keys(props.model).filter((key) => !(typeof props.model[key] === 'object')).map((key) => (
-								<div >
+								<div>
 									<TextField
 										id={key}
 										label={key}
+										key={props.model[key]}
 										defaultValue={props.model[key]}
-										readOnly={true}
-
+										InputProps={{
+											readOnly: true,
+										}}
 										className={classes.textfield}
 									/>
 								</div >
@@ -204,8 +206,11 @@ export default function ModelView(props) {
 								<TextField
 									id={'dataset1'}
 									label={'dataset'}
+									key={props.model.properties.dataset}
 									defaultValue={props.model.properties.dataset}
-									readOnly={true}
+									InputProps={{
+										readOnly: true,
+									}}
 
 									className={classes.textfield}
 								/>

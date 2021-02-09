@@ -100,7 +100,7 @@ export default function ModelNavigator(props) {
 					{modelZooData.map((application) => (
 						<TreeItem nodeId={application.key} label={application.title}>
 							{application.models.map((model) => (
-								<TreeItem nodeId={model.name} label={model.name} onLabelClick={() => setModel(model)}>
+								<TreeItem nodeId={model.name} label={model.name} onLabelClick={() => {setModel(model)}}>
 								</TreeItem>
 							))}
 						</TreeItem>
